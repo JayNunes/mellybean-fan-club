@@ -1,0 +1,7 @@
+assets/*
+!script.js
+!style.css
+
+.vscode/
+
+thevillainsrevenge_spoilers.html

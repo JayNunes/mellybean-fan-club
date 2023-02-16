@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap);
+
+@font-face {
+    font-display: swap;
+    font-family: Hauracherell-NC;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/static/media/Hauracherell-NC.679fdcfd1f505b5e4f5f.woff) format("woff"), url(/static/media/Hauracherell-NC.2e4b46fbd3671df1ac3b.woff2) format("woff2"), url(/static/media/Hauracherell-NC.7d17a5e4bc55175d09ed.svg#Hauracherell-NC) format("svg"), url(/static/media/Hauracherell-NC.cfbebcd7a0f2c2a2be1f.eot), url(/static/media/Hauracherell-NC.cfbebcd7a0f2c2a2be1f.eot?#iefix) format("embedded-opentype"), url(/static/media/Hauracherell-NC.3af4e4c25d4b64893707.ttf) format("truetype")
+}
+
+:root {
+    --light-blue: #cfeaf3;
+    --med-blue: #5dc1e8;
+    --dark-blue: #3e5e94;
+    --dark-blue-2: rgba(3, 50, 124, .9);
+    --orange: #ff9838;
+    --orange-yellow: #ffa024;
+    --dark-yellow: #f7c92e;
+    --light-yellow: #f8f7d9;
+    --card-center-yellow: #f8d77b;
+    --card-center-purple: #c7bedd;
+    --red: #ff444e;
+    --royal-red: #e13c3f;
+    --dark-teal: #0c4e66;
+    --light-purple: #dedaeb;
+    --dark-purple: #53318f;
+    --green: #5bb249;
+    --ff-primary: "Zen Maru Gothic", sans-serif;
+    --ff-heading: "Hauracherell-NC", sans-serif
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #5dc1e8;
+    background-color: var(--med-blue);
+    background-image: linear-gradient(315deg, #5dc1e8, #cfeaf3 74%);
+    background-image: linear-gradient(315deg, var(--med-blue) 0, var(--light-blue) 74%);
+    color: #fff;
+    font-family: Zen Maru Gothic, sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+    min-height: 100vh;
+    text-align: center
+}
+
+.App {
+    margin: 40px auto;
+    max-width: 860px;
+    padding: 0 20px 0 20px;
+}
+
+.App h2 {
+    display: inline-block;
+    margin-inline: 15px;
+    font-family: Zen Maru Gothic, sans-serif;
+    color: var(--royal-red);
+}
+
+.App h3 {
+    display: inline-block;
+    color: var(--dark-blue);
+    font-weight: 700;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.App h2,
+.App h3 {
+    margin-top: 30px;
+}
+
+.App button {
+    display: inline-block;
+    -webkit-clip-path: polygon(93% 0%, 100% 50%, 93% 100%, 0% 100%, 7% 50%, 0% 0%);
+    clip-path: polygon(93% 0%, 100% 50%, 93% 100%, 0% 100%, 7% 50%, 0% 0%);
+    letter-spacing: normal;
+    font-size: 30px;
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    background-color: var(--royal-red);
+    padding: 1rem;
+    box-shadow: 0px 1px 0px 1px black;
+    width: 210px;
+    margin: auto;
+    color: white;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+
+button:hover {
+    transform: translateX(10px);
+}
+
+.card-grid {
+    grid-gap: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 40px
+}
+
+.card {
+    position: relative
+}
+
+.card img {
+    border-radius: 6px;
+    box-shadow: -2px 3px 3px 3px rgba(0, 0, 0, .3);
+    display: block;
+    width: 100%
+}
+
+.card .front {
+    position: absolute;
+    transform: rotateY(90deg);
+    transform-style: preserve-3d;
+    transition: all .2s ease-in
+}
+
+.flipped .front {
+    transform: rotateY(0deg);
+    transition-delay: .2s
+}
+
+.card .back {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all .2s ease-in;
+    transition-delay: .2s
+}
+
+.flipped .back {
+    transform: rotateY(90deg);
+    transition-delay: 0s
+}
